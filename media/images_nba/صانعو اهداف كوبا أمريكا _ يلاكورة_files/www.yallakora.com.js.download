@@ -1,0 +1,66 @@
+
+var TWAGORAINARTICLE=TWAGORAINARTICLE||function(){
+			
+	var getHTScriptElement = function(){
+		var hTClass = 'pa-ht-class';
+		if (document.currentScript)
+			return document.currentScript;
+		else {
+			
+			var scripts = document.getElementsByTagName('script');
+			var currentHTag = 'agorahtag.tech/c/www.yallakora.com.js'; 
+			var sl = scripts.length;
+			for (var s=0; s<sl; s++){
+				if ( (scripts[s].src.indexOf(currentHTag) !== -1) && !scripts[s].classList.contains(hTClass)){
+					scripts[s].classList.add(hTClass);
+					break;
+				}
+			}
+
+			return scripts[s];
+		}
+	}
+    
+	var getQueryString = function(script){
+		var queryString = script.src.replace(/^[^\?]+\??/,'');
+		return '?'+queryString;
+	}
+    
+	var getParameterByName = function(name, url) {
+		if (!url) url = window.location.href;
+		name = name.replace(/[\[\]]/g, '$&');
+		var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+			results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		try {
+			return decodeURIComponent(results[2].replace(/\+/g, ' '));
+		}catch(err){
+			return null;
+		}
+	}
+            
+	var getPartnerSCOfromHTUrl = function(currentScript){
+		var schain = null;
+		var currentHTScript = currentScript;
+		var qS = getQueryString(currentHTScript);
+		if (qS) schain = getParameterByName('schain',qS);
+		
+		return schain;
+
+	}
+			
+			
+	var config = {"site_name":"www.yallakora.com","rules":[{"name":"Custom script - Clear both for videoad","priority":3,"type":"CustomScript","product":{"CustomScript":{"scripts":[{"code":"<script>var addcss = function(css){    var head = document.getElementsByTagName('head')[0];    var s = document.createElement('style');    s.setAttribute('type', 'text\/css');    if (s.styleSheet) {           s.styleSheet.cssText = css;    } else {                        s.appendChild(document.createTextNode(css));    }    head.appendChild(s); };addcss('#videoad {clear:both;direction:initial;height:unset!important;}');<\/script>"},{"code":"<script>var addcss = function(css){    var head = document.getElementsByTagName('head')[0];    var s = document.createElement('style');    s.setAttribute('type', 'text\/css');    if (s.styleSheet) {           s.styleSheet.cssText = css;    } else {                        s.appendChild(document.createTextNode(css));    }    head.appendChild(s); };addcss('#frmPAVast {float:unset;}');<\/script>"},{"code":"<script>var addcss = function(css){    var head = document.getElementsByTagName('head')[0];    var s = document.createElement('style');    s.setAttribute('type', 'text\/css');    if (s.styleSheet) {           s.styleSheet.cssText = css;    } else {                        s.appendChild(document.createTextNode(css));    }    head.appendChild(s); }; addcss('div[id^=\"pa_1x1_psbk_\"] iframe[id^=\"postbid_if_\"] {height:350px!important;padding-left:280px!important;}');<\/script>"},{"code":"<script>var addcss = function(css){    var head = document.getElementsByTagName('head')[0];    var s = document.createElement('style');    s.setAttribute('type', 'text\/css');    if (s.styleSheet) {           s.styleSheet.cssText = css;    } else {                        s.appendChild(document.createTextNode(css));    }    head.appendChild(s); }; addcss('#div-gpt-ad-1586790050390-0 > div > iframe{margin-bottom:-254px;padding-left:464px;padding-bottom:319px;}');<\/script>"},{"code":"<script>var addcss = function(css){    var head = document.getElementsByTagName('head')[0];    var s = document.createElement('style');    s.setAttribute('type', 'text\/css');    if (s.styleSheet) {           s.styleSheet.cssText = css;    } else {                        s.appendChild(document.createTextNode(css));    }    head.appendChild(s); }; addcss('div.sc-belowarticle-desktop-yallakora span.trc_rbox_header_span{line-height:2.2;}div.sc-belowarticle-desktop-yallakora div.trc_rbox_header{background:#e8e8e8;border-right: 4px solid #000;padding:0;padding-right:10px;margin-bottom:10px;height:40px;}div.sc-belowarticle-desktop-yallakora div.videoCube{background:#ffffff!important;}div.sc-belowarticle-desktop-yallakora span.video-label-box{padding:10px;height:100px!important;}div.sc-belowarticle-desktop-yallakora span.video-label{max-height:80px;}div.sc-belowarticle-desktop-yallakora span.branding{position:absolute;bottom:0px;}');<\/script>"}]}},"targeting":{"device_targeting":"desktop"}},{"name":"Custom script - Clear both for videoad","priority":3,"type":"CustomScript","product":{"CustomScript":{"scripts":[{"code":"<script>var addcss = function(css){    var head = document.getElementsByTagName('head')[0];    var s = document.createElement('style');    s.setAttribute('type', 'text\/css');    if (s.styleSheet) {           s.styleSheet.cssText = css;    } else {                        s.appendChild(document.createTextNode(css));    }    head.appendChild(s); };addcss('#videoad {height:unset!important;}');<\/script>"},{"code":"<script>var addcss=function(css){var head=document.getElementsByTagName('head')[0];var s=document.createElement('style');s.setAttribute('type','text\/css');if (s.styleSheet) {s.styleSheet.cssText = css;}else{s.appendChild(document.createTextNode(css));}head.appendChild(s); };addcss('div[id^=\"trc_header_\"]>span{font-family:droidBold, Arial!important;font-size:16px!important;}');<\/script>"}]}},"targeting":{"device_targeting":"mobile"}},{"name":"ad block tags","priority":3,"type":"AdBlock","product":{"AdBlock":{"scripts":[{"breakpoints":{"minWidth":1367},"tags":[{"code":"<div id=\"1409947\" style=\"width:300px;height:250px;margin:0 auto;\"><\/div>\n\t\t\t\t\t\t\t\t\t<script type=\"text\/javascript\">\n\t\t\t\t\t\t\t\t\tvar Criteo = Criteo || {};\n\t\t\t\t\t\t\t\t\tCriteo.events = Criteo.events || [];\n\t\t\t\t\t\t\t\t\tCriteo.events.push(function() {\n\t\t\t\t\t\t\t\t\t\tCriteo.DisplayAcceptableAdIfAdblocked({\n\t\t\t\t\t\t\t\t\t\t\tzoneid: 1409947,\n\t\t\t\t\t\t\t\t\t\t\tcontainerid: \"1409947\"\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t<\/script>","selector":"#content-wrap > div > section.showcaseDiv"},{"code":"<div id=\"1409947-1\" style=\"width:300px;height:250px;margin:0 auto;\"><\/div>\n\t\t\t\t\t\t\t\t\t<script type=\"text\/javascript\">\n\t\t\t\t\t\t\t\t\tvar Criteo = Criteo || {};\n\t\t\t\t\t\t\t\t\tCriteo.events = Criteo.events || [];\n\t\t\t\t\t\t\t\t\tCriteo.events.push(function() {\n\t\t\t\t\t\t\t\t\t\tCriteo.DisplayAcceptableAdIfAdblocked({\n\t\t\t\t\t\t\t\t\t\t\tzoneid: 1409947,\n\t\t\t\t\t\t\t\t\t\t\tcontainerid: \"1409947-1\"\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t<\/script>","selector":"#content-wrap > div > div.movedSC > section"},{"code":"<div id=\"1409949\" style=\"width:728px;height:900px;margin:0 auto;\"><\/div>\n\t\t\t\t\t\t\t\t\t<script type=\"text\/javascript\">\n\t\t\t\t\t\t\t\t\tvar Criteo = Criteo || {};\n\t\t\t\t\t\t\t\t\tCriteo.events = Criteo.events || [];\n\t\t\t\t\t\t\t\t\tCriteo.events.push(function() {\n\t\t\t\t\t\t\t\t\t\tCriteo.DisplayAcceptableAdIfAdblocked({\n\t\t\t\t\t\t\t\t\t\t\tzoneid: 1409949,\n\t\t\t\t\t\t\t\t\t\t\tcontainerid: \"1409949\"\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t<\/script>","selector":"#content-wrap > div > section.leaderboardDiv"},{"code":"<div id=\"1409946\" style=\"width:300px;height:600px;margin:0 auto;\"><\/div>\n\t\t\t\t\t\t\t\t\t<script type=\"text\/javascript\">\n\t\t\t\t\t\t\t\t\tvar Criteo = Criteo || {};\n\t\t\t\t\t\t\t\t\tCriteo.events = Criteo.events || [];\n\t\t\t\t\t\t\t\t\tCriteo.events.push(function() {\n\t\t\t\t\t\t\t\t\t\tCriteo.DisplayAcceptableAdIfAdblocked({\n\t\t\t\t\t\t\t\t\t\t\tzoneid: 1409946,\n\t\t\t\t\t\t\t\t\t\t\tcontainerid: \"1409946\"\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t<\/script>","selector":"#content-wrap > div > section.leaderboardDiv"}]},{"breakpoints":{"minWidth":0,"maxWidth":1366},"tags":[{"code":"<div id=\"1409947\" style=\"width:300px;height:250px;margin:0 auto;\"><\/div>\n\t\t\t\t\t\t\t\t\t<script type=\"text\/javascript\">\n\t\t\t\t\t\t\t\t\tvar Criteo = Criteo || {};\n\t\t\t\t\t\t\t\t\tCriteo.events = Criteo.events || [];\n\t\t\t\t\t\t\t\t\tCriteo.events.push(function() {\n\t\t\t\t\t\t\t\t\t\tCriteo.DisplayAcceptableAdIfAdblocked({\n\t\t\t\t\t\t\t\t\t\t\tzoneid: 1409947,\n\t\t\t\t\t\t\t\t\t\t\tcontainerid: \"1409947\"\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t<\/script>","selector":"#content-wrap > div > section.showcaseDiv"},{"code":"<div id=\"1409947-1\" style=\"width:300px;height:250px;margin:0 auto;\"><\/div>\n\t\t\t\t\t\t\t\t\t<script type=\"text\/javascript\">\n\t\t\t\t\t\t\t\t\tvar Criteo = Criteo || {};\n\t\t\t\t\t\t\t\t\tCriteo.events = Criteo.events || [];\n\t\t\t\t\t\t\t\t\tCriteo.events.push(function() {\n\t\t\t\t\t\t\t\t\t\tCriteo.DisplayAcceptableAdIfAdblocked({\n\t\t\t\t\t\t\t\t\t\t\tzoneid: 1409947,\n\t\t\t\t\t\t\t\t\t\t\tcontainerid: \"1409947-1\"\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t<\/script>","selector":"#content-wrap > div > div.movedSC > section"},{"code":"<div id=\"1409949\" style=\"width:728px;height:900px;margin:0 auto;\"><\/div>\n\t\t\t\t\t\t\t\t\t<script type=\"text\/javascript\">\n\t\t\t\t\t\t\t\t\tvar Criteo = Criteo || {};\n\t\t\t\t\t\t\t\t\tCriteo.events = Criteo.events || [];\n\t\t\t\t\t\t\t\t\tCriteo.events.push(function() {\n\t\t\t\t\t\t\t\t\t\tCriteo.DisplayAcceptableAdIfAdblocked({\n\t\t\t\t\t\t\t\t\t\t\tzoneid: 1409949,\n\t\t\t\t\t\t\t\t\t\t\tcontainerid: \"1409949\"\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t<\/script>","selector":"#content-wrap > div > section.leaderboardDiv"},{"code":"<div id=\"1409946\" style=\"width:300px;height:600px;margin:0 auto;\"><\/div>\n\t\t\t\t\t\t\t\t\t<script type=\"text\/javascript\">\n\t\t\t\t\t\t\t\t\tvar Criteo = Criteo || {};\n\t\t\t\t\t\t\t\t\tCriteo.events = Criteo.events || [];\n\t\t\t\t\t\t\t\t\tCriteo.events.push(function() {\n\t\t\t\t\t\t\t\t\t\tCriteo.DisplayAcceptableAdIfAdblocked({\n\t\t\t\t\t\t\t\t\t\t\tzoneid: 1409946,\n\t\t\t\t\t\t\t\t\t\t\tcontainerid: \"1409946\"\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t<\/script>","selector":"#content-wrap > div > section.leaderboardDiv"}]}]}}},{"name":"exitbee Yallakora","priority":2,"type":"ExitBee","product":{"ExitBee":{"name":"exitbee","id":"8005"}}}],"sco":{"paSellerId":"105419","paOwns":"Owned & Operated"}};
+
+	var currentHTScript = getHTScriptElement();
+
+	return {
+		getConfig:function(){return config;},
+		getPartnersSCO: function(){return getPartnerSCOfromHTUrl(currentHTScript);}
+	}
+
+}();
+
+!function(e,t,a){var n,r=e.getElementsByTagName(t)[0];e.getElementById("pa-tag")||((n=e.createElement(t)).id="pa-tag",n.src="//aghtag.tech/libs/projectagora.min.js",r.parentNode.insertBefore(n,r))}(document,"script");
+			
